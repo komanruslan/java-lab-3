@@ -16,19 +16,16 @@ class ComplexNum implements IPair {
         this.imag = imag;
     }
 
-    @Override
     public IPair add(IPair other) {
         ComplexNum c = (ComplexNum) other;
         return new ComplexNum(this.real + c.real, this.imag + c.imag);
     }
 
-    @Override
     public IPair subtract(IPair other) {
         ComplexNum c = (ComplexNum) other;
         return new ComplexNum(this.real - c.real, this.imag - c.imag);
     }
 
-    @Override
     public IPair multiply(IPair other) {
         ComplexNum c = (ComplexNum) other;
         double r = this.real * c.real - this.imag * c.imag;
@@ -36,12 +33,10 @@ class ComplexNum implements IPair {
         return new ComplexNum(r, i);
     }
 
-    @Override
     public String toString() {
         return real + (imag >= 0 ? " + " : " - ") + Math.abs(imag) + "i";
     }
 
-    @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (!(obj instanceof ComplexNum)) return false;
@@ -60,30 +55,25 @@ class RationalNum implements IPair {
         this.den = den;
     }
 
-    @Override
     public IPair add(IPair other) {
         RationalNum r = (RationalNum) other;
         return new RationalNum(this.num * r.den + r.num * this.den, this.den * r.den);
     }
 
-    @Override
     public IPair subtract(IPair other) {
         RationalNum r = (RationalNum) other;
         return new RationalNum(this.num * r.den - r.num * this.den, this.den * r.den);
     }
 
-    @Override
     public IPair multiply(IPair other) {
         RationalNum r = (RationalNum) other;
         return new RationalNum(this.num * r.num, this.den * r.den);
     }
 
-    @Override
     public String toString() {
         return num + "/" + den;
     }
 
-    @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (!(obj instanceof RationalNum)) return false;

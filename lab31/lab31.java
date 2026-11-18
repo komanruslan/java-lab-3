@@ -25,7 +25,7 @@ class Toy extends ProductItem {
         this.targetAge = targetAge;
     }
 
-    @Override
+    
     public void Show() {
         System.out.println("Іграшка: " + getName() + ", Ціна: " + getPrice() + " грн, Вікова категорія: " + targetAge + "+ років");
     }
@@ -41,7 +41,6 @@ class FoodProduct extends ProductItem {
 
     public int getExpirationDays() { return expirationDays; }
 
-    @Override
     public void Show() {
         System.out.println("Продукт: " + getName() + ", Ціна: " + getPrice() + " грн, Термін придатності: " + expirationDays + " днів");
     }
@@ -55,7 +54,6 @@ class DairyProduct extends FoodProduct {
         this.fatPercentage = fatPercentage;
     }
 
-    @Override
     public void Show() {
         System.out.println("Молочний продукт: " + getName() + ", Ціна: " + getPrice() + " грн, Термін: " + getExpirationDays() + " днів, Жирність: " + fatPercentage + "%");
     }
@@ -70,7 +68,7 @@ public class lab31 {
         items[2] = new FoodProduct("Хліб", 25, 5);
         items[3] = new DairyProduct("Молоко", 38, 10, 2.5);
 
-        System.out.println(" Список товарів (через Show())");
+        System.out.println(" Список товарів:");
         for (ProductItem item : items) {
             item.Show();
         }

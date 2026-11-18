@@ -15,19 +15,16 @@ class Complex extends Pair {
         this.imag = imag;
     }
 
-    @Override
     public Pair add(Pair other) {
         Complex c = (Complex) other;
         return new Complex(this.real + c.real, this.imag + c.imag);
     }
 
-    @Override
     public Pair subtract(Pair other) {
         Complex c = (Complex) other;
         return new Complex(this.real - c.real, this.imag - c.imag);
     }
 
-    @Override
     public Pair multiply(Pair other) {
         Complex c = (Complex) other;
         double r = this.real * c.real - this.imag * c.imag;
@@ -35,12 +32,11 @@ class Complex extends Pair {
         return new Complex(r, i);
     }
 
-    @Override
     public String toString() {
         return real + (imag >= 0 ? " + " : " - ") + Math.abs(imag) + "i";
     }
 
-    @Override
+
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (!(obj instanceof Complex)) return false;
@@ -59,7 +55,6 @@ class Rational extends Pair {
         this.den = den;
     }
 
-    @Override
     public Pair add(Pair other) {
         Rational r = (Rational) other;
         int resNum = this.num * r.den + r.num * this.den;
@@ -67,7 +62,6 @@ class Rational extends Pair {
         return new Rational(resNum, resDen);
     }
 
-    @Override
     public Pair subtract(Pair other) {
         Rational r = (Rational) other;
         int resNum = this.num * r.den - r.num * this.den;
@@ -75,18 +69,15 @@ class Rational extends Pair {
         return new Rational(resNum, resDen);
     }
 
-    @Override
     public Pair multiply(Pair other) {
         Rational r = (Rational) other;
         return new Rational(this.num * r.num, this.den * r.den);
     }
 
-    @Override
     public String toString() {
         return num + "/" + den;
     }
 
-    @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (!(obj instanceof Rational)) return false;
